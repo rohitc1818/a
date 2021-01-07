@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class="container">
+                <table class="table table-hover table-stripped mt-4">
+                <thead>
+                  <tr>
+                   <th scope="col">Request id</th>
+                   <th scope="col">Request Type</th>
+                   <th scope="col">Request Desc</th>
+                   <th scope="col">Request Date</th>
+                   <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 {% for t in there%}
+                   <tr>
+                       <td>{{forloop.counter}}</td>
+                       <td>{{t.Request_Type}}</td>
+                       <td>{{t.Request_Desc}}</td>
+                       <td>{{t.Request_Date}}</td>
+                       <td></td>
+                   </tr>
+                 {% endfor %}
+                </tbody>
+                </table><hr>
+                <div class="text-center">
+                    <a href="/request" class="btn btn-primary btn-sm">New Request</a>&nbsp&nbsp&nbsp
+                    <a href="/update" class="btn btn-primary btn-sm">Update Request Page</a>
+                </div>
+        </div>
+{% endblock %}
